@@ -251,7 +251,7 @@ function matrixGenerator(x, y) {
   for (i = 0; i < y; i++) {
     let row = [];
     for (let j = 0; j < x; j++) {
-      row.push();
+      row.push(i.toString() + j.toString());
     }
     matrix.push(row);
   }
