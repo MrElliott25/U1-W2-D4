@@ -218,12 +218,24 @@ console.log(antiSpam("Ciao mi chiamo Mario"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-function passedTime() {
-  let oggi = new Date();
-  let GMA = [oggi.getDate(), oggi.getMonth() + 1, oggi.getFullYear()];
-}
+function passedTime(inputDate) {
+  let today = new Date();
+  let passedDate = new Date(inputDate);
 
-passedTime();
+  //Ammetto che ho cercato su internet la base logica e i metodi per farlo
+
+  //Comincio calcolando la differenza in millisecondi dalla data in input e la data di oggi
+  const msDifference = today.getTime() - passedDate.getTime();
+
+  //Poi la converto in giorni
+  const dayDiff = msDifference / (1000 * 60 * 60 * 24);
+
+  return Math.floor(dayDiff);
+}
+const data = "2025-12-01";
+passedDays = passedTime(data);
+console.log("Sono passati " + passedDays + " giorni dalla data inserita");
+
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
  Il risultato deve essere una matrice di "x" volte "y", e i valori devono rispecchiare gli indici della posizione all'interno della matrice.
@@ -233,3 +245,17 @@ passedTime();
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function matrixGenerator(x, y) {
+  let matrix = [];
+  for (i = 0; i < y; i++) {
+    let row = [];
+    for (let j = 0; j < x; j++) {
+      row.push();
+    }
+    matrix.push(row);
+  }
+  console.table(matrix);
+}
+
+matrixGenerator(3, 2);
